@@ -109,5 +109,5 @@ model.build(x_train.shape[1:])
 model.compile(d_optimizer=tfa.optimizers.AdamW(learning_rate=1e-4, weight_decay=5e-5),
               g_optimizer=tfa.optimizers.AdamW(learning_rate=1e-4, weight_decay=5e-5),
               loss=keras.losses.MeanSquaredError())
-model.fit(y_train, x_train_noisy, epochs=10, shuffle=True)  # TODO: split three epoch when fit
+model.fit(x_train, x_train_noisy, epochs=10, shuffle=True)  # TODO: split three epoch when fit
 show(x_test_noisy[:16], model(x_test_noisy[:16]))
