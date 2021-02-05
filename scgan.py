@@ -16,7 +16,7 @@ class ScGAN(keras.Model):
             keras.layers.Conv2D(filters=64, kernel_size=3, strides=1, padding="SAME"),
             keras.layers.LeakyReLU(0.2),
         ])
-        for _ in range(6):  # 16 in original; 6 for less time of train
+        for _ in range(16):  # 16 in original;
             self.gen.add(keras.layers.Conv2D(filters=64, kernel_size=3, strides=1, padding="SAME"))
             self.gen.add(keras.layers.BatchNormalization())
             self.gen.add(keras.layers.LeakyReLU(0.2))
